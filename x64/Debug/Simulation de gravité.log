@@ -1,0 +1,12 @@
+﻿  main.cpp
+C:\Users\fredl\Documents\Projet_Orion\Petits Projets\Simulations\Simulation de gravité\main.cpp(51,17): warning C4244: '=' : conversion de 'int' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+C:\Users\fredl\Documents\Projet_Orion\Petits Projets\Simulations\Simulation de gravité\main.cpp(52,17): warning C4244: '=' : conversion de 'int' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+  Simulation de gravité.vcxproj -> C:\Users\fredl\Documents\Projet_Orion\Petits Projets\Simulations\Simulation de gravité\x64\Debug\Simulation de gravité.exe
