@@ -44,14 +44,14 @@ class Particle
 
 public:
     Particle()
-    //Particle(float pos_x, float pos_y, float vel_x, float vel_y)
+        //Particle(float pos_x, float pos_y, float vel_x, float vel_y)
     {
-        int x = rand() % 1600;
-        int y = rand() % 1000;
+        int x = rand() % 800;
+        int y = rand() % 500;
         pos.x = x;
         pos.y = y;
-        vel.x = 1;
-        vel.y = 1;
+        vel.x = 0;
+        vel.y = 3;
         //pos.x = pos_x;
         //pos.y = pos_y;
 
@@ -81,7 +81,7 @@ public:
         float normalized_x = inverse_distance * distance_x;
         float normalized_y = inverse_distance * distance_y;
 
-        // 1/x * 1/x = 1/x≤ -> plus on est loin moins la gravitÈ est forte
+        // 1/x * 1/x = 1/x¬≤ -> plus on est loin moins la gravit√© est forte
         float inverse_square_dropoff = inverse_distance * inverse_distance;
 
         float acceleration_x = normalized_x * s.get_strength() * inverse_square_dropoff;
@@ -93,15 +93,6 @@ public:
         pos.x += vel.x;
         pos.y += vel.y;
     }
-
-    //void collision_check(Particle& p, Particle& p2)
-    //{
-    //    float s = 0.0;
-    //    if ((p - p2) <= p2.s.getRadius() + p.s.getRadius())
-    //    {
-
-    //    }
-    //}
 };
 
 int main()
@@ -109,7 +100,7 @@ int main()
     sf::RenderWindow window(sf::VideoMode(1600, 1000), "My Program");
     window.setFramerateLimit(60);
 
-    GravitySource source(800, 500, 7000);
+    GravitySource source(800, 500, 9000);
 
     Particle particle[1000];
 
@@ -124,12 +115,8 @@ int main()
         }
 
         window.clear();
-        for (int i=0; i < 1000; i++)
+        for (int i = 0; i < 1000; i++)
         {
-            //for (int j = 0; j < 1000; j++)
-            //{
-            //    particle[i].collision_check(particle[j], particle[i]);
-            //}
             particle[i].update_physics(source);
         }
 
